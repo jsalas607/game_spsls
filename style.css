@@ -1,0 +1,132 @@
+@import "./node_modules/nes.css/css/nes.css";
+
+:root{
+    --width-hand:6rem;
+    --width-hand-max: max-content;
+    --border-box: 0.4rem solid;
+    --border-box-roca-color: #6D581C;
+    --boder-box-lagarto-color: #82330E;
+    --boder-box-papel-color: #88063F;
+    --boder-box-spock-color: #2C0563;
+    --boder-box-tijera-color:#083782;
+    --background-box-color-roca:#D8BC6F;
+    --background-box-color-lagarto:#CF815D;
+    --background-box-color-papel:#E0337E;
+    --background-box-color-spock:#8246D6;
+    --background-box-color-tijera:#366DC7;
+    --margin-bottom-hand:1rem;
+    --border-radius-hand:50%;
+}
+
+
+
+html{
+    font-size: 62.5%;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button{
+    width: 100%;
+    max-width: 53.5rem;
+}
+
+.container{
+    display: flex;  
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 5rem 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+.header{
+    background-color: none; 
+    width: 70vw;
+    height: max-content;
+    text-align: center;
+}
+
+.section{
+    width: 69.8%;
+    height: 23.6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer{
+    width: max-content;
+    max-width: 100%;
+    display: flex;
+}
+
+.figcaption{
+    height:max-content;
+    width: max-content;
+    max-width: 100% ;
+}
+
+.svg-hand{
+    padding: 0.5rem; 
+    align-items: center;
+    justify-content: center;
+    flex:auto;
+}
+
+.roca{
+    border: var(--border-box) var(--border-box-roca-color); 
+    width: var(--width-hand-max); 
+    width: var(--width-hand);
+    border-radius: var(--border-radius-hand); 
+    margin-bottom: var(--margin-bottom-hand); 
+    background-color: var(--background-box-color-roca);
+}
+
+.lagarto{
+    border:var(--border-box) var(--boder-box-lagarto-color);  
+    border-radius: var(--border-radius-hand);
+    width: var(--width-hand-max); 
+    width: var(--width-hand);
+    margin-bottom: var(--margin-bottom-hand);
+    background-color: var(--background-box-color-lagarto);
+}
+
+.papel{
+    border: var(--border-box) var(--boder-box-papel-color);
+    width: var(--width-hand-max); 
+    width: var(--width-hand);
+    border-radius: var(--border-radius-hand); 
+    margin-bottom: var(--margin-bottom-hand); 
+    background-color: var(--background-box-color-papel);
+}
+
+.spock{
+    border: var(--border-box) var(--boder-box-spock-color); 
+    width: var(--width-hand-max); 
+    width: var(--width-hand);
+    border-radius: var(--border-radius-hand); 
+    margin-bottom: var(--margin-bottom-hand);
+    background-color: var(--background-box-color-spock);
+}
+
+.tijera{
+    border: var(--border-box) var(--boder-box-tijera-color); 
+    width: var(--width-hand-max); 
+    border-radius: var(--border-radius-hand); 
+    width: var(--width-hand);
+    margin-bottom: var(--margin-bottom-hand);
+    background-color: var(--background-box-color-tijera);
+}
+
+.h1{ 
+    font-size: 4rem;
+}
+
+.nes-btn {
+    border-image-repeat: repeat !important;
+}
