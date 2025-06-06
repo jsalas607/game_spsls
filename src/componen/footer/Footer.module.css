@@ -1,0 +1,91 @@
+:root{
+    --width-hand:max-content;
+    --height-hand:70px;
+    --width-hand-max: max-content;
+    --border-box: 4px solid;
+    --border-box-roca-color: #6D581C;
+    --boder-box-lagarto-color: #82330E;
+    --boder-box-papel-color: #88063F;
+    --boder-box-spock-color: #2C0563;
+    --boder-box-tijera-color:#083782;
+    --background-box-color-roca:#D8BC6F;
+    --background-box-color-lagarto:#CF815D;
+    --background-box-color-papel:#E0337E;
+    --background-box-color-spock:#8246D6;
+    --background-box-color-tijera:#366DC7;
+    --margin-bottom-hand:10px;
+    --border-radius-hand:50%;
+}
+
+
+.footer{
+position: absolute; 
+bottom: 0; 
+left: 0;   
+right: 0;
+width: 100%;
+height: 25vh;
+padding: 00px;
+box-sizing: border-box;
+
+}
+
+.figcaption{
+    max-width: 100% ;
+    display: flex;
+    flex-wrap: row wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.svgHand{ 
+width: 100px;
+height: 100px;
+}
+
+.roca{
+    border: var(--border-box) var(--border-box-roca-color); 
+    height: var(--height-hand);
+    width: var(--width-hand);
+    border-radius: var(--border-radius-hand); 
+    margin-bottom: var(--margin-bottom-hand); 
+    background-color: var(--background-box-color-roca);
+}
+
+.lagarto{
+    border:var(--border-box) var(--boder-box-lagarto-color);  
+    border-radius: var(--border-radius-hand);
+    width: var(--width-hand);
+    height: var(--height-hand);
+    margin-bottom: var(--margin-bottom-hand);
+    background-color: var(--background-box-color-lagarto);
+}
+
+.papel{
+    border: var(--border-box) var(--boder-box-papel-color);
+    width: var(--width-hand);
+    height: var(--height-hand);
+    border-radius: var(--border-radius-hand); 
+    margin-bottom: var(--margin-bottom-hand); 
+    background-color: var(--background-box-color-papel);
+}
+
+.spock{
+    border: var(--border-box) var(--boder-box-spock-color); 
+    width: var(--width-hand);
+    height: var(--height-hand);
+    border-radius: var(--border-radius-hand); 
+    margin-bottom: var(--margin-bottom-hand);
+    background-color: var(--background-box-color-spock);
+}
+
+.tijera{
+    border: var(--border-box) var(--boder-box-tijera-color); 
+    border-radius: var(--border-radius-hand); 
+    width: var(--width-hand);
+    height: var(--height-hand);
+    margin-bottom: var(--margin-bottom-hand);
+    background-color: var(--background-box-color-tijera);
+}
