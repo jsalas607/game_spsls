@@ -1,0 +1,14 @@
+.form{
+background-color:none;
+width: 100%;
+height:unset;
+display: flex;
+height: 45vh;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+
+.imputform{
+    width: 100px;
+}
