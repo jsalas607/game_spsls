@@ -1,11 +1,10 @@
 .header{
-    background-color:none; 
     width: 100vw;
     height: 30vh;
     text-align: center;
     overflow: hidden;
     line-height: 1.2;
-    font-size:3.5vw;
+    font-size:3vh;
     white-space: normal;
     word-break: break-word;
     justify-content: center;
