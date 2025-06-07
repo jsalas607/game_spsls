@@ -1,0 +1,9 @@
+.butoon_singular{
+    width: 75vw;
+    height: 10vh;
+}
+
+.nes-btn {
+    border-image-repeat: repeat !important;
+    font-size: 5vh;
+}
