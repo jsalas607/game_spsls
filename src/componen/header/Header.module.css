@@ -19,11 +19,9 @@
 
 
 .header{
-    position: fixed; /* Hace que el header se posicione con respecto a la ventana del navegador */
-    top: 0;          /* Lo alinea a la parte superior */
-    left: 0;         /* Lo alinea a la parte izquierda */
-    width: 100%;     /* Asegura que ocupe todo el ancho disponible */
+    width: 100%;
     box-sizing: border-box;
+    height: 25vh;
 }
 
 .figcaption{
