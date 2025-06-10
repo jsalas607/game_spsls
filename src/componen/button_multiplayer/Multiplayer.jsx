@@ -3,15 +3,12 @@ import "nes.css/css/nes.min.css";
 import "@/src/componen/button_multiplayer/Multiplayer.css"
 
 
-const Multiplayer = () => {
+const Multiplayer = ({ handleClick }) => {
 
-const hanldclick = () => {
-    console.log("estoy funcionando soy multiplayer");
-}
 
 return (
 <>
-    <button type="button" className="nes-btn is-primary button_multi" onClick={hanldclick}>
+    <button type="button" className="nes-btn is-primary button_multi" onClick={handleClick}>
         multijugador
     </button>
 </>
