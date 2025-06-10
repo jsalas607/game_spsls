@@ -1,12 +1,12 @@
 import Footer from "@/src/componen/footer/Footer"
 import Header from "@/src/componen/header/Header"
-import MsjIncio from "@/src/componen/msj_inicio/MsjIncio"
+import TextoSingularPlayer from "@/src/componen/texto_singular_player/TextoSingularPlayer"
 
 const RoomSigularPlayer = () => {
   return (
     <>
       <Header/>
-      <MsjIncio/>
+      <TextoSingularPlayer/>
       <Footer/>
     </>
 
