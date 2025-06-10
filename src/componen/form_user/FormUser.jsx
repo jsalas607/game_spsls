@@ -7,11 +7,16 @@ import "@/src/componen/form_user/FormUser.css"
 
 const FormUser = () => {
 
+const handleParentClick = () => {
+    console.log("estoy funcionando soy singular");
+  };
+
+
 return (
 
 <form className="nes-field form">
         <Imput/>
-        <Singularplayer />
+        <Singularplayer handleClick={handleParentClick} />
         <Multiplayer
         />
 </form>
