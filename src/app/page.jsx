@@ -1,15 +1,15 @@
 import Footer from "@/src/componen/footer/Footer";
-import FormUser from "../componen/form_user/FormUser";
-import Title from "../componen/title/Title";
-
+import FormUser from "@/src/componen/form_user/FormUser";
+import Title from "@/src/componen/title/Title";
 
 export default function Home() {
 
-return (
+
+  return (
 <>
-  <Title/>
-  <FormUser/>
-  <Footer/>
+    <Title/>
+    <FormUser />
+    <Footer/>
 </>
 );
 }
