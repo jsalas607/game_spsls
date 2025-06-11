@@ -1,25 +1,31 @@
 'use client'
 import Singularplayer from "../button_single_player/Singularplayer"
 import Multiplayer from "../button_multiplayer/Multiplayer";
-import Imput from "../Imput/Imput";
+import InputBase from "../Imput/InputBase";
 import "@/src/componen/form_user/FormUser.css"
 
 const FormUser = () => {
 
-const handleParentClick = () => {
+  const handleParentClick = () => {
     console.log("estoy funcionando soy singular");
   };
 
+  const handleParentClickMultiplayer = () => {
+    console.log("estoy funcionando soy multiplayer");
+  };
 
-return (
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
 
-<form className="nes-field form">
-        <Imput/>
-        <Singularplayer handleClick={handleParentClick} />
-        <Multiplayer
-        />
-</form>
-)
+
+  return (
+    <form className="nes-field form">
+      <InputBase handleChange={handleChange} />
+      <Singularplayer handleClick={handleParentClick} />
+      <Multiplayer handleClick={handleParentClickMultiplayer}/>
+    </form>
+  )
 
 }
 
