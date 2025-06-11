@@ -4,7 +4,6 @@ import MsjInicial from "../mensajes_singular_player/msj_inicial/MsjInicial";
 import MsjPartida from "../mensajes_singular_player/msj_partida/MsjPartida";
 const MsjIncio = () => {
 const estaAutenticado= false
-
   return (
 <>
   <section className="section-msj-inicio"> 

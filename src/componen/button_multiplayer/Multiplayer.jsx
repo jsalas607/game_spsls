@@ -3,7 +3,7 @@ import "nes.css/css/nes.min.css";
 import "@/src/componen/button_multiplayer/Multiplayer.css"
 
 
-const Multiplayer = ({ handleClick }) => {
+const Multiplayer = ({ handleClick}) => {
 
 
 return (
