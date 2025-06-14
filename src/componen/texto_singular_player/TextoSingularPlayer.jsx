@@ -3,7 +3,7 @@ import  "@/src/componen/texto_singular_player/textoSingularPlayer.css"
 import MsjInicial from "../mensajes_singular_player/msj_inicial/MsjInicial";
 import MsjPartida from "../mensajes_singular_player/msj_partida/MsjPartida";
 const MsjIncio = () => {
-const estaAutenticado= false
+const estaAutenticado= true
   return (
 <>
   <section className="section-msj-inicio"> 

@@ -1,17 +1,35 @@
-'use client'; // Esto es importante para usar Context API en el App Router
+'use client'
+import React, { createContext, useContext, useState, useCallback } from 'react';
+import { gameOptions } from '@/src/const/const';
+const UserNameContext = createContext();
 
-import React, { createContext, useContext, useState } from 'react';
-
-// 1. Crea el contexto
-const UserNameContext = createContext(undefined); // undefined es el valor inicial si no hay proveedor
-
-// 2. Crea el Proveedor (Provider)
 export const UserNameProvider = ({ children }) => {
-  const [inputValue, setInputValue] = useState(''); // Aquí vive el estado global
+  const [inputValue, setInputValue] = useState(''); 
+  const [selectedItemUser, setSelectedItemUser] = useState(null);
+  const [selectedItemCompu, setSelectedItemCompu] = useState(null); 
+
+  const generateCompuSelection = useCallback(() => {
+    const randomIndex = Math.floor(Math.random() * gameOptions.length);
+    const randomCompuItem = gameOptions[randomIndex];
+    setSelectedItemCompu(randomCompuItem);
+    console.log("La computadora seleccionó:", randomCompuItem.name); 
+  }, []); 
+
+
+  const resetSelections = useCallback(() => {
+    setSelectedItemUser(null);
+    setSelectedItemCompu(null);
+  }, []);
 
   const value = {
     inputValue,
     setInputValue,
+    selectedItemUser,
+    setSelectedItemUser,
+    selectedItemCompu,
+    setSelectedItemCompu, 
+    generateCompuSelection, 
+    resetSelections,
   };
 
   return (
@@ -19,12 +37,11 @@ export const UserNameProvider = ({ children }) => {
       {children}
     </UserNameContext.Provider>
   );
-};
+};  
 
-// 3. Crea un custom hook para consumir el contexto fácilmente
 export const useUserName = () => {
   const context = useContext(UserNameContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useUserName must be used within a UserNameProvider');
   }
   return context;

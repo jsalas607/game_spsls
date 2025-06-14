@@ -7,9 +7,9 @@ const MsjInicial = () => {
   const { inputValue} = useUserName()
 
   return (
-    // Usa un operador ternario para mostrar el username si existe, de lo contrario, muestra "Invitado"
+
     <h1 className="section-msj-inicio-h1 nes-text is-primary">
-      {inputValue ? `${inputValue}, ` : 'Invitado, '} elige tu mejor mano para jugar
+      {inputValue ? `${inputValue}, ` : 'Invitado, '} e
     </h1>
   )
 }
