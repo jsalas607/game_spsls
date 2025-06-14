@@ -9,7 +9,7 @@ import { useUserName } from "@/src/context/UserNameContext.js"
 const FormUser = () => {
 
   const router = useRouter();
-  const { inputValue, setInputValue } = useUserName(); // ¡Usa el estado global!
+  const {inputValue, setInputValue} = useUserName(); 
   const processInput = (playerType) => {
     console.log(`Jugador ${playerType} seleccionado. Valor del input:`, inputValue);
   };

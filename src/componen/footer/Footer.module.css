@@ -31,7 +31,7 @@ box-sizing: border-box;
     display: flex;
     flex-wrap: row wrap;
     width: 100%;
-    height: 100%;
+    height: 25vh;
     justify-content: space-between;
     align-items: center;
 }
@@ -84,4 +84,14 @@ height: 100px;
     height: var(--height-hand);
     margin-bottom: var(--margin-bottom-hand);
     background-color: var(--background-box-color-tijera);
+}
+
+.centerSingleImage{
+    max-width: 100% ;
+    display: flex;
+    flex-wrap: row wrap;
+    width: 100%;
+    height: 25vh;
+    justify-content: center;
+    align-items: center;
 }

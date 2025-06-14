@@ -32,6 +32,8 @@
     height: 100%;
     justify-content: space-between;
     align-items: center;
+    height: 25vh;
+    width: 100%;
 }
 
 .svgHand{ 
@@ -82,4 +84,11 @@ height: 100px;
     height: var(--height-hand);
     margin-bottom: var(--margin-bottom-hand);
     background-color: var(--background-box-color-tijera);
+}
+
+.selectedImageCompu{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 25vh;
 }
