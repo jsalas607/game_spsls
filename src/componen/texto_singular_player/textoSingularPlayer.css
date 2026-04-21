@@ -3,6 +3,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 16px;
+  padding: 24px var(--page-padding);
   text-align: center;
+}
+
+@media (min-width: 481px) {
+  .section-msj-inicio {
+    padding: 32px var(--page-padding);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-msj-inicio {
+    padding: 48px var(--page-padding);
+  }
 }

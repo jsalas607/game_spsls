@@ -4,7 +4,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 10px 0;
-  min-height: 90px;
+  min-height: 80px;
 }
 
 .roca {
@@ -56,10 +56,26 @@
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  min-height: 90px;
+  min-height: 80px;
 }
 
 .selectedImage {
   transform: scale(1.18);
   box-shadow: 0 0 18px 5px rgba(146, 204, 65, 0.55);
+}
+
+@media (min-width: 481px) {
+  .figcaption,
+  .centerSingleImage {
+    padding: 14px 0;
+    min-height: 106px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .figcaption,
+  .centerSingleImage {
+    padding: 18px 0;
+    min-height: 126px;
+  }
 }

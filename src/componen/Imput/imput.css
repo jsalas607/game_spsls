@@ -1,5 +1,17 @@
 .imput {
   width: 100%;
-  max-width: 480px;
-  font-size: clamp(0.7rem, 2vw, 0.95rem);
+  max-width: var(--game-max-width);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 481px) {
+  .imput {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .imput {
+    font-size: 1rem;
+  }
 }

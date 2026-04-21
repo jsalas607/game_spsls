@@ -1,6 +1,20 @@
 .button_multi {
   width: 100%;
-  max-width: 480px;
-  padding: 16px !important;
-  font-size: clamp(0.7rem, 2vw, 0.95rem) !important;
+  max-width: var(--game-max-width);
+  padding: 14px !important;
+  font-size: 0.75rem !important;
+}
+
+@media (min-width: 481px) {
+  .button_multi {
+    padding: 18px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button_multi {
+    padding: 20px !important;
+    font-size: 1rem !important;
+  }
 }

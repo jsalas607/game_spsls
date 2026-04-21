@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* ─── Design tokens ─────────────────────────────────────
+   Mobile  : base (< 481px)
+   Tablet  : @media (min-width: 481px)
+   Desktop : @media (min-width: 1024px)
+──────────────────────────────────────────────────────── */
 :root {
-  --hand-size: clamp(52px, 13vw, 72px);
+  --hand-size: clamp(48px, 12vw, 64px);
+  --game-max-width: 480px;
+  --page-padding: 16px;
+
   --border-box: 4px solid;
   --border-box-roca-color: #6D581C;
   --boder-box-lagarto-color: #82330E;
@@ -16,6 +24,22 @@
   --border-radius-hand: 50%;
 }
 
+@media (min-width: 481px) {
+  :root {
+    --hand-size: 78px;
+    --game-max-width: 580px;
+    --page-padding: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --hand-size: 90px;
+    --game-max-width: 520px;
+    --page-padding: 32px;
+  }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -28,4 +52,10 @@ html, body {
   font-family: 'Press Start 2P', cursive;
   color: #ffffff;
   overflow-x: hidden;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background: radial-gradient(ellipse at center, #2a2f38 0%, #212529 65%);
+  }
 }
