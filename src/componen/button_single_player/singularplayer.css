@@ -1,20 +1,6 @@
 .butoon_singular {
   width: 100%;
   max-width: var(--game-max-width);
-  padding: 14px !important;
-  font-size: 0.75rem !important;
-}
-
-@media (min-width: 481px) {
-  .butoon_singular {
-    padding: 18px !important;
-    font-size: 0.85rem !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .butoon_singular {
-    padding: 20px !important;
-    font-size: 1rem !important;
-  }
+  padding: 20px !important;
+  font-size: 1rem !important;
 }

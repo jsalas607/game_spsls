@@ -1,6 +1,5 @@
 'use client'
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { gameOptions } from '@/src/const/const';
 
 const UserNameContext = createContext();
@@ -14,17 +13,36 @@ const REGLAS_VICTORIA = {
 };
 
 export const UserNameProvider = ({ children }) => {
-    const router = useRouter();
-
+    const [screen, setScreen] = useState('landing');
     const [inputValue, setInputValue] = useState('');
+    const [totalRounds, setTotalRounds] = useState(null);
     const [selectedItemUser, setSelectedItemUser] = useState(null);
     const [selectedItemCompu, setSelectedItemCompu] = useState(null);
     const [gameResult, setGameResult] = useState(null);
     const [userWins, setUserWins] = useState(0);
     const [compuWins, setCompuWins] = useState(0);
     const [isGameOver, setIsGameOver] = useState(false);
+    const [countdown, setCountdown] = useState(null);
 
-    const WINNING_SCORE = 3;
+
+
+    // Reset explícito al recargar la página (F5)
+    useEffect(() => {
+        const handleUnload = () => {
+            setScreen('landing');
+            setInputValue('');
+            setSelectedItemUser(null);
+            setSelectedItemCompu(null);
+            setGameResult(null);
+            setUserWins(0);
+            setCompuWins(0);
+            setIsGameOver(false);
+            setCountdown(null);
+            setTotalRounds(null);
+        };
+        window.addEventListener('beforeunload', handleUnload);
+        return () => window.removeEventListener('beforeunload', handleUnload);
+    }, []);
 
     const generateCompuSelection = useCallback(() => {
         const randomIndex = Math.floor(Math.random() * gameOptions.length);
@@ -65,14 +83,14 @@ export const UserNameProvider = ({ children }) => {
 
 
 useEffect(() => {
-    if (userWins >= WINNING_SCORE || compuWins >= WINNING_SCORE) {
+    if (totalRounds && (userWins >= totalRounds || compuWins >= totalRounds)) {
         const timer = setTimeout(() => {
-            setIsGameOver(true); 
-        }, 4000); 
+            setIsGameOver(true);
+        }, 800);
 
         return () => clearTimeout(timer);
     }
-}, [userWins, compuWins, WINNING_SCORE]);
+}, [userWins, compuWins, totalRounds]);
 
     const resetGameButKeepInput = useCallback(() => {
         setSelectedItemUser(null);
@@ -80,20 +98,23 @@ useEffect(() => {
         setGameResult(null);
         setUserWins(0);
         setCompuWins(0);
-        setIsGameOver(false); 
+        setIsGameOver(false);
+        setCountdown(null);
     }, []);
 
    
     const resetAllGame = useCallback(() => {
-        setInputValue(''); 
+        setInputValue('');
         setSelectedItemUser(null);
         setSelectedItemCompu(null);
         setGameResult(null);
         setUserWins(0);
         setCompuWins(0);
-        setIsGameOver(false); 
-        router.push('/'); 
-    }, [router]);
+        setIsGameOver(false);
+        setCountdown(null);
+        setTotalRounds(null);
+        setScreen('landing');
+    }, []);
 
     const resetSelections = useCallback(() => {
         setSelectedItemUser(null);
@@ -115,9 +136,15 @@ useEffect(() => {
         compuWins,
         resetSelections,
         determinarGanador,
-        isGameOver, 
-        resetAllGame, 
-        resetGameButKeepInput
+        isGameOver,
+        resetAllGame,
+        resetGameButKeepInput,
+        countdown,
+        setCountdown,
+        screen,
+        setScreen,
+        totalRounds,
+        setTotalRounds
     };
 
     return (

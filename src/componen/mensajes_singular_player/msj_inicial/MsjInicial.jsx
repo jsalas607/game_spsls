@@ -18,9 +18,11 @@ const MsjInicial = () => {
           <h1 className="section-msj-inicio-h1 nes-text is-primary">
             {inputValue ? `${inputValue}, ` : 'Invitado, '} elije tu mejor mano
           </h1>
-          <h1 className="nes-text is-primary section-msj-partida-h2">
-            Victorias: {userWins} - Derrotas: {compuWins}
-          </h1>
+          {(userWins > 0 || compuWins > 0) && (
+            <h1 className="nes-text is-primary section-msj-partida-h2">
+              Victorias: {userWins} - Derrotas: {compuWins}
+            </h1>
+          )}
 
         </div>
       )}

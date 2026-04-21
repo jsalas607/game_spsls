@@ -1,43 +1,59 @@
+/* ── Landing ── */
 .main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 var(--page-padding) 24px;
+  padding: 0 var(--page-padding) 40px;
 }
 
 .weaponsSection {
   width: 100%;
   max-width: var(--game-max-width);
-  margin-top: auto;
+  margin-top: 36px;
   padding-top: 16px;
   border-top: 4px solid rgba(146, 204, 65, 0.35);
   text-align: center;
 }
 
 .weaponsLabel {
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: 3px;
   margin: 0 0 12px;
 }
 
-@media (min-width: 481px) {
-  .main {
-    padding: 0 var(--page-padding) 32px;
-  }
-  .weaponsLabel {
-    font-size: 0.6rem;
-  }
+/* ── Game Room ── */
+.gameFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .main {
-    padding: 0 var(--page-padding) 40px;
-  }
-  .weaponsSection {
-    margin-top: 36px;
-  }
-  .weaponsLabel {
-    font-size: 0.65rem;
-  }
+.abandonBtn {
+  position: fixed !important;
+  bottom: 32px !important;
+  right: 32px !important;
+  width: calc(var(--hand-size) * 0.5) !important;
+  height: calc(var(--hand-size) * 0.5) !important;
+  min-width: unset !important;
+  padding: 0 !important;
+  font-size: 0.75rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.gamePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--game-max-width);
+  margin: 0 auto;
+  padding: 16px var(--page-padding);
+  border-left: 2px solid rgba(146, 204, 65, 0.15);
+  border-right: 2px solid rgba(146, 204, 65, 0.15);
 }
