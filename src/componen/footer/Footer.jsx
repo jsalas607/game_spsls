@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { gameOptions } from '@/src/const/const'
-import styles from "@/src/componen/footer/footer.module.css"
+import styles from "@/src/componen/footer/Footer.module.css"
 
 const Footer = () => {
   return (
