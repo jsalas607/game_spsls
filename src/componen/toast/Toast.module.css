@@ -1,0 +1,34 @@
+.container {
+  position: fixed;
+  bottom: 24px;
+  right: 16px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 300px;
+  pointer-events: none;
+}
+
+.toast {
+  padding: 14px 18px !important;
+  margin: 0 !important;
+  animation: slideIn 0.2s ease forwards;
+}
+
+.message {
+  font-size: 0.6rem;
+  line-height: 1.9;
+  margin: 0;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
