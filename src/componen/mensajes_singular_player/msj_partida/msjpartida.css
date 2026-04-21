@@ -2,3 +2,13 @@
     font-size: 7vh;
     text-align: center;
 }
+
+.partida{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-msj-partida-h2{
+    text-align: center;
+}

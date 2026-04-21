@@ -1,0 +1,30 @@
+.gamaover{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.gamaover_butoon{
+
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content:space-around
+}
+
+.gamaover_butoon_reset{
+    width: 25vw;
+    height: 10vh;
+}
+
+.gamaover_butoon_final{
+    width: 25vw;
+    height: 10vh;
+}
+
+.nes-btn {
+    border-image-repeat: repeat !important;
+    font-size: 5vh;
+}

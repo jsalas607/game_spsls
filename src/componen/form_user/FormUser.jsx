@@ -51,7 +51,7 @@ const handleParentClick = () => {
     <form className="nes-field form" onSubmit={handleSubmit}>
       <InputBase handleChange={handleChange} value={inputValue} />
       <Singularplayer handleClick={handleParentClick} />
-      <Multiplayer handleClick={handleParentClickMultiplayer}/>
+      {/* <Multiplayer handleClick={handleParentClickMultiplayer}/> */}
     </form>
   )
 }
