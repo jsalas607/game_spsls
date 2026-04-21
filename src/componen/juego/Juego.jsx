@@ -3,33 +3,59 @@ import styles from '@/src/componen/juego/Juego.module.css'
 import Image from 'next/image'
 import { gameOptions } from '@/src/const/const'
 import { useUserName } from "@/src/context/UserNameContext.js"
-import { useState } from 'react'; 
+import { useState, useEffect, useRef } from 'react';
 
 const Juego = () => {
-    const { selectedItemUser, setSelectedItemUser, generateCompuSelection, setSelectedItemCompu, gameResult, isGameOver } = useUserName();
+    const {
+        selectedItemUser,
+        setSelectedItemUser,
+        generateCompuSelection,
+        setSelectedItemCompu,
+        gameResult,
+        isGameOver,
+        countdown,
+        setCountdown,
+    } = useUserName();
+
     const [isCooldownActive, setIsCooldownActive] = useState(false);
+    const intervalRef = useRef(null);
+    const timeoutRef = useRef(null);
+
+    // Limpia todos los timers al desmontar el componente (ej: al abandonar)
+    useEffect(() => {
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        };
+    }, []);
 
     const handleImageClick = (itemName) => {
-        if (isGameOver || selectedItemUser !== null || isCooldownActive) {
-            return;
-        }
-
-        if (gameResult && selectedItemUser !== itemName) {
-            return;
-        }
-
-        setIsCooldownActive(true);
+        if (isGameOver || selectedItemUser !== null || isCooldownActive) return;
 
         setSelectedItemUser(itemName);
+        setIsCooldownActive(true);
 
+        let count = 3;
+        setCountdown(count);
 
-        generateCompuSelection();
+        intervalRef.current = setInterval(() => {
+            count--;
+            setCountdown(count);
 
-        setTimeout(() => {
-            setSelectedItemUser(null);
-            setSelectedItemCompu(null);
-            setIsCooldownActive(false); 
-        }, 4000);
+            if (count <= 0) {
+                clearInterval(intervalRef.current);
+                intervalRef.current = null;
+                setCountdown(null);
+                generateCompuSelection();
+
+                timeoutRef.current = setTimeout(() => {
+                    setSelectedItemUser(null);
+                    setSelectedItemCompu(null);
+                    setIsCooldownActive(false);
+                    timeoutRef.current = null;
+                }, 2500);
+            }
+        }, 1000);
     };
 
     const imagesToRender = isGameOver
@@ -46,6 +72,8 @@ const Juego = () => {
                     alt={item.name}
                     className={`${styles.svgHand} ${styles[item.name]} ${selectedItemUser === item.name ? styles.selectedImage : ''} ${(gameResult && selectedItemUser !== item.name) || isGameOver || isCooldownActive || selectedItemUser !== null ? styles.disabledImage : ''}`}
                     src={item.image}
+                    width={72}
+                    height={72}
                     onClick={(isGameOver || isCooldownActive || selectedItemUser !== null) ? undefined : () => handleImageClick(item.name)}
                 />
             ))}

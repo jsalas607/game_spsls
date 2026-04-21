@@ -1,7 +1,7 @@
 .section-msj-partida-h1 {
-  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  font-size: 1.15rem;
   text-align: center;
-  line-height: 2.2;
+  line-height: 2.5;
   padding: 0 8px;
 }
 
@@ -13,17 +13,7 @@
 
 .section-msj-partida-h2 {
   text-align: center;
-}
-
-@media (min-width: 481px) {
-  .section-msj-partida-h1 {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-msj-partida-h1 {
-    font-size: 1.15rem;
-    line-height: 2.5;
-  }
+  font-size: 0.9rem;
+  white-space: nowrap;
+  line-height: 2;
 }

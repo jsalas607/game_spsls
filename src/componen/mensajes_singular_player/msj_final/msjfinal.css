@@ -4,20 +4,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px var(--page-padding);
-  gap: 28px;
+  padding: 48px var(--page-padding);
+  gap: 40px;
 }
 
 .msj_final_card {
   width: 100%;
   max-width: var(--game-max-width);
-  padding: 28px 20px !important;
+  padding: 48px 40px !important;
   text-align: center;
 }
 
 .msj_final_title {
-  font-size: clamp(1rem, 3.5vw, 1.3rem);
-  margin-bottom: 24px !important;
+  font-size: 1.7rem;
+  margin-bottom: 32px !important;
   display: block;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .msj_final_stat {
-  font-size: clamp(0.65rem, 2.5vw, 0.9rem);
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -37,52 +37,13 @@
 .msj_final_actions {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
   width: 100%;
   max-width: var(--game-max-width);
 }
 
 .msj_final_btn {
   width: 100%;
-  padding: 14px !important;
-  font-size: 0.75rem !important;
-}
-
-@media (min-width: 481px) {
-  .msj_final_card {
-    padding: 36px 32px !important;
-  }
-  .msj_final_title {
-    font-size: 1.4rem;
-    margin-bottom: 32px !important;
-  }
-  .msj_final_stat {
-    font-size: 0.9rem;
-  }
-  .msj_final_btn {
-    padding: 18px !important;
-    font-size: 0.85rem !important;
-  }
-  .msj_final_actions {
-    gap: 18px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .msj_final_page {
-    gap: 40px;
-  }
-  .msj_final_card {
-    padding: 48px 40px !important;
-  }
-  .msj_final_title {
-    font-size: 1.7rem;
-  }
-  .msj_final_stat {
-    font-size: 1rem;
-  }
-  .msj_final_btn {
-    padding: 20px !important;
-    font-size: 1rem !important;
-  }
+  padding: 20px !important;
+  font-size: 1rem !important;
 }

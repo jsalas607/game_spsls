@@ -3,8 +3,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
-  min-height: 80px;
+  padding: 18px 0;
+  min-height: 126px;
 }
 
 .figcaption {
@@ -12,8 +12,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
-  min-height: 80px;
+  padding: 18px 0;
+  min-height: 126px;
 }
 
 .svgHand {
@@ -64,8 +64,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
-  min-height: 80px;
+  padding: 18px 0;
+  min-height: 126px;
 }
 
 .selectedImage {
@@ -73,20 +73,7 @@
   box-shadow: 0 0 18px 5px rgba(146, 204, 65, 0.55);
 }
 
-@media (min-width: 481px) {
-  .figcaption,
-  .footer,
-  .centerSingleImage {
-    padding: 14px 0;
-    min-height: 106px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .figcaption,
-  .footer,
-  .centerSingleImage {
-    padding: 18px 0;
-    min-height: 126px;
-  }
+.disabledImage {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
