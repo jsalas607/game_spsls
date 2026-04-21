@@ -1,0 +1,22 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 24px;
+}
+
+.weaponsSection {
+  width: 100%;
+  max-width: 480px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 4px solid rgba(146, 204, 65, 0.35);
+  text-align: center;
+}
+
+.weaponsLabel {
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  margin: 0 0 12px;
+}

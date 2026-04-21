@@ -1,14 +1,16 @@
-.section-msj-partida-h1{
-    font-size: 7vh;
-    text-align: center;
+.section-msj-partida-h1 {
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  text-align: center;
+  line-height: 2.2;
+  padding: 0 8px;
 }
 
-.partida{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.partida {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.section-msj-partida-h2{
-    text-align: center;
+.section-msj-partida-h2 {
+  text-align: center;
 }

@@ -1,23 +1,17 @@
 import Footer from "@/src/componen/footer/Footer.jsx";
 import FormUser from "@/src/componen/form_user/FormUser";
 import Title from "@/src/componen/title/Title";
-
-
-/* import { Press_Start_2P } from 'next/font/google'
-
-// If loading a variable font, you don't need to specify the font weight
-const press = Press_Start_2P({ subsets: ['latin'],weights: ["400"],
-styles: ["normal"], }) */
+import styles from "@/src/app/page.module.css";
 
 export default function Home() {
-
-
   return (
-<>
-
-    <Title/>
-    <FormUser />
-    <Footer/>
-</>
-);
+    <main className={styles.main}>
+      <Title />
+      <FormUser />
+      <div className={styles.weaponsSection}>
+        <p className={`nes-text is-disabled ${styles.weaponsLabel}`}>tus armas</p>
+        <Footer />
+      </div>
+    </main>
+  );
 }

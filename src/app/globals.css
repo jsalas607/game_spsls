@@ -1,1 +1,31 @@
-@import "./node_modules/nes.css/css/nes.css"
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --hand-size: clamp(52px, 13vw, 72px);
+  --border-box: 4px solid;
+  --border-box-roca-color: #6D581C;
+  --boder-box-lagarto-color: #82330E;
+  --boder-box-papel-color: #88063F;
+  --boder-box-spock-color: #2C0563;
+  --boder-box-tijera-color: #083782;
+  --background-box-color-roca: #D8BC6F;
+  --background-box-color-lagarto: #CF815D;
+  --background-box-color-papel: #E0337E;
+  --background-box-color-spock: #8246D6;
+  --background-box-color-tijera: #366DC7;
+  --border-radius-hand: 50%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #212529;
+  font-family: 'Press Start 2P', cursive;
+  color: #ffffff;
+  overflow-x: hidden;
+}

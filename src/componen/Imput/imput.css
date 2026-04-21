@@ -1,6 +1,5 @@
-.imput{
-    height: 10vh;
-    width: 75vw;     
-    margin: 0;
-    font-size:5vh;
+.imput {
+  width: 100%;
+  max-width: 480px;
+  font-size: clamp(0.7rem, 2vw, 0.95rem);
 }
