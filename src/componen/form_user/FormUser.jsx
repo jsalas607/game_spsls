@@ -5,31 +5,27 @@ import InputBase from "../Imput/InputBase";
 import "@/src/componen/form_user/FormUser.css"
 import { useRouter } from 'next/navigation'
 import { useUserName } from "@/src/context/UserNameContext.js"
+import { useToast } from "@/src/context/ToastContext.js"
 
 const FormUser = () => {
 
   const router = useRouter();
-  const {inputValue, setInputValue} = useUserName(); 
-  const processInput = (playerType) => {
-    console.log(`Jugador ${playerType} seleccionado. Valor del input:`, inputValue);
-  };
+  const { inputValue, setInputValue } = useUserName();
+  const { addToast } = useToast();
 
 const handleParentClick = () => {
-    if (inputValue.trim() !== '') { 
-      processInput("singular");
-      router.push('/GameRoom'); 
+    if (inputValue.trim() !== '') {
+      router.push('/GameRoom');
     } else {
-      console.log("El nombre de usuario no puede estar vacío.");
-      alert("Por favor, ingresa un nombre de usuario para jugar.");
+      addToast('Ingresa un nombre de usuario para jugar.');
     }
   };
 
   const handleParentClickMultiplayer = () => {
     if (inputValue.trim() !== '') {
-      processInput("multiplayer");
+      addToast('Multijugador próximamente.', 'warning');
     } else {
-      console.log("El nombre de usuario no puede estar vacío para multiplayer.");
-      alert("Por favor, ingresa un nombre de usuario para jugar.");
+      addToast('Ingresa un nombre de usuario para jugar.');
     }
   };
 

@@ -1,11 +1,49 @@
-.msj_final{
-    width:100%;
-    height: 75vh;
-    background-color: none;
-    font-size: 4vh;
-    
+.msj_final_page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  gap: 32px;
 }
 
-.nes-btn{
-        border-image-repeat: repeat !important;
+.msj_final_card {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px 24px !important;
+  text-align: center;
+}
+
+.msj_final_title {
+  font-size: clamp(1rem, 3.5vw, 1.5rem);
+  margin-bottom: 28px !important;
+  display: block;
+}
+
+.msj_final_stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.msj_final_stat {
+  font-size: clamp(0.7rem, 2.5vw, 0.95rem);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.msj_final_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.msj_final_btn {
+  width: 100%;
+  padding: 16px !important;
+  font-size: clamp(0.7rem, 2vw, 0.9rem) !important;
 }
