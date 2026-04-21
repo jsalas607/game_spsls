@@ -4,7 +4,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 10px 0;
-  min-height: 90px;
+  min-height: 80px;
 }
 
 .roca {
@@ -50,5 +50,21 @@
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  min-height: 90px;
+  min-height: 80px;
+}
+
+@media (min-width: 481px) {
+  .figcaption,
+  .selectedImageCompu {
+    padding: 14px 0;
+    min-height: 106px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .figcaption,
+  .selectedImageCompu {
+    padding: 18px 0;
+    min-height: 126px;
+  }
 }
