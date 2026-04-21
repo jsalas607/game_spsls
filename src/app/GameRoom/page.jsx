@@ -1,24 +1,22 @@
 'use client'
 import Juego from "@/src/componen/juego/Juego"
-import Header from "@/src/componen/header/Header"
 import TextoSingularPlayer from "@/src/componen/texto_singular_player/TextoSingularPlayer"
-import GameOverScreen from "@/src/componen/GameOverScreen/GameOverScreen"; // Importa el nuevo componente
-import { useUserName } from "@/src/context/UserNameContext.js"; // Importa el hook para acceder al contexto
+import GameOverScreen from "@/src/componen/GameOverScreen/GameOverScreen"
+import { useUserName } from "@/src/context/UserNameContext.js"
+import styles from "./gameRoom.module.css"
 
 const RoomSigularPlayer = () => {
-const { isGameOver } = useUserName(); // Obtén el estado de juego terminado
+  const { isGameOver } = useUserName()
 
   return (
-    <>
-      {/* <Header/> */}
-      {/* Renderiza condicionalmente: TextoSingularPlayer o GameOverScreen */}
+    <main className={styles.page}>
       {isGameOver ? (
         <GameOverScreen />
       ) : (
-        <TextoSingularPlayer/>
+        <TextoSingularPlayer />
       )}
-      <Juego/>
-    </>
+      <Juego />
+    </main>
   )
 }
 
