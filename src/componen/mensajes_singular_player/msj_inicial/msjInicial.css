@@ -2,3 +2,9 @@
     font-size: 7vh;
     text-align: center;
 }
+
+.game-section{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
