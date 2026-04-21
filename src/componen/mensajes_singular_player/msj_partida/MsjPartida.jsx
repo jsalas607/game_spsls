@@ -10,13 +10,24 @@ const MsjPartida = () => {
         return null;
     }
 
+    const esEmpate = gameResult.includes('Empate');
+    const esVictoria = gameResult.includes('Ganaste');
+
+    const colorResultado = esEmpate
+        ? 'is-warning'
+        : esVictoria
+            ? 'is-success'
+            : 'is-error';
+
     return (
         <div className="partida">
-            <h1 className="nes-text is-primary section-msj-partida-h1">
+            <h1 className={`nes-text ${colorResultado} section-msj-partida-h1`}>
                 {gameResult}
             </h1>
-            <h1 className="nes-text is-primary section-msj-partida-h2">
-                Victorias: {userWins} - Derrotas: {compuWins}
+            <h1 className="section-msj-partida-h2">
+                <span className="nes-text is-success">Victorias: {userWins}</span>
+                <span className="nes-text is-primary"> - </span>
+                <span className="nes-text is-error">Derrotas: {compuWins}</span>
             </h1>
         </div>
     );
