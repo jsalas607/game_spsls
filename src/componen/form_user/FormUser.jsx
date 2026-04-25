@@ -21,6 +21,14 @@ const FormUser = () => {
     setScreen('game');
   };
 
+  const handleMultijugador = () => {
+    if (inputValue.trim() === '') {
+      addToast('Ingresa un nombre de usuario para jugar.');
+      return;
+    }
+    setScreen('multiplayer');
+  };
+
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -61,6 +69,14 @@ const FormUser = () => {
       </div>
 
       <Singularplayer handleClick={handleParentClick} />
+
+      <button
+        type="button"
+        className="nes-btn is-warning multi-btn"
+        onClick={handleMultijugador}
+      >
+        multijugador
+      </button>
     </form>
   )
 }

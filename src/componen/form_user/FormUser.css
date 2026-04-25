@@ -45,3 +45,9 @@
 .rounds-option input {
   cursor: pointer;
 }
+
+.multi-btn {
+  font-size: 0.65rem !important;
+  padding: 14px 28px !important;
+  min-width: 240px;
+}
