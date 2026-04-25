@@ -1,0 +1,66 @@
+.espera {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 48px var(--page-padding);
+}
+
+.titulo {
+  font-size: 1.3rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 36px !important;
+}
+
+.label {
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  margin: 0 !important;
+}
+
+.codigo {
+  font-size: 2.5rem;
+  letter-spacing: 12px;
+  margin: 0 !important;
+}
+
+.hint {
+  font-size: 0.5rem;
+  line-height: 2;
+  margin: 0 !important;
+}
+
+.esperando {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.puntos {
+  font-size: 0.65rem;
+}
+
+.animacion {
+  font-size: 0.65rem;
+  animation: parpadeo 1.2s step-start infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.btn {
+  font-size: 0.7rem !important;
+  padding: 14px 28px !important;
+}

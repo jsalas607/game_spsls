@@ -1,5 +1,6 @@
 import { UserNameProvider } from "@/src/context/UserNameContext.js"
 import { ToastProvider } from "@/src/context/ToastContext.js"
+import { MultiplayerProvider } from "@/src/context/MultiplayerContext.js"
 import Toast from "@/src/componen/toast/Toast"
 import "nes.css/css/nes.min.css"
 import "@/src/app/globals.css"
@@ -15,7 +16,9 @@ export default function RootLayout({ children }) {
       <body>
         <ToastProvider>
           <UserNameProvider>
-            {children}
+            <MultiplayerProvider>
+              {children}
+            </MultiplayerProvider>
           </UserNameProvider>
           <Toast />
         </ToastProvider>

@@ -6,11 +6,23 @@ import Juego from "@/src/componen/juego/Juego";
 import Header from "@/src/componen/header/Header";
 import TextoSingularPlayer from "@/src/componen/texto_singular_player/TextoSingularPlayer";
 import GameOverScreen from "@/src/componen/GameOverScreen/GameOverScreen";
+import LobbyMulti from "@/src/componen/multiplayer/LobbyMulti";
+import SalaEspera from "@/src/componen/multiplayer/SalaEspera";
+import JuegoMulti from "@/src/componen/multiplayer/JuegoMulti";
 import { useUserName } from "@/src/context/UserNameContext.js";
+import { useMultiplayer } from "@/src/context/MultiplayerContext.js";
 import styles from "@/src/app/page.module.css";
 
 export default function Home() {
   const { screen, isGameOver, resetAllGame } = useUserName();
+  const { screenMulti } = useMultiplayer();
+
+  // ── Pantallas de multijugador ────────────────────────────────────
+  if (screen === 'multiplayer') {
+    if (screenMulti === 'espera') return <SalaEspera />;
+    if (screenMulti === 'juego')  return <JuegoMulti />;
+    return <LobbyMulti />;
+  }
 
   if (screen === 'game') {
     return (
