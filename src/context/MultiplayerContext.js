@@ -1,5 +1,5 @@
 'use client'
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect, useRef } from 'react';
 import { db } from '@/src/lib/firebase';
 import { ref, set, get, onValue, update, remove, onDisconnect } from 'firebase/database';
 import { useUserName } from '@/src/context/UserNameContext';
@@ -32,6 +32,14 @@ export const MultiplayerProvider = ({ children }) => {
   const [cargando, setCargando]         = useState(false);
   const [resultadoRonda, setResultadoRonda] = useState(null);
 
+  // ─── Refs para evitar bucles infinitos ──────────────────────────
+  // Guarda el valor actual de screenMulti sin meterlo como dependencia
+  const screenMultiRef = useRef('lobby');
+  useEffect(() => { screenMultiRef.current = screenMulti; }, [screenMulti]);
+
+  // Evita que el efecto de resultado se ejecute más de una vez por ronda
+  const procesandoRondaRef = useRef(false);
+
   // ─── Escucha cambios en tiempo real de la sala ───────────────────
   useEffect(() => {
     if (!codigoSala) return;
@@ -47,13 +55,14 @@ export const MultiplayerProvider = ({ children }) => {
       setDatosSala(datos);
 
       // Si el jugador 2 se unió, pasar a pantalla de juego
-      if (datos.jugador2?.nombre && screenMulti === 'espera') {
+      // Usamos el ref para no necesitar screenMulti como dependencia
+      if (datos.jugador2?.nombre && screenMultiRef.current === 'espera') {
         setScreenMulti('juego');
       }
     });
 
     return () => unsub();
-  }, [codigoSala, screenMulti]);
+  }, [codigoSala]); // ← sin screenMulti: evita el bucle infinito
 
   // ─── Detecta cuando ambos eligieron y calcula resultado ──────────
   useEffect(() => {
@@ -62,7 +71,16 @@ export const MultiplayerProvider = ({ children }) => {
     const j1 = datosSala.jugador1;
     const j2 = datosSala.jugador2;
 
-    if (!j1?.mano || !j2?.mano) return; // aún no eligieron los dos
+    // Si alguno no tiene mano, resetea el flag y el resultado para la próxima ronda
+    if (!j1?.mano || !j2?.mano) {
+      procesandoRondaRef.current = false;
+      setResultadoRonda(null); // ambos jugadores limpian el resultado
+      return;
+    }
+
+    // Si ya procesamos esta ronda, no volvemos a hacerlo
+    if (procesandoRondaRef.current) return;
+    procesandoRondaRef.current = true;
 
     // Calcula el resultado
     const manoJ1 = j1.mano;
